@@ -8,8 +8,8 @@ install:
   - npm install
 
 script:
-  - hexo clean
-  - hexo generate
+  #- hexo clean
+  #- hexo generate
 
 after_script:
   - git config --global user.name "mu-yu"
