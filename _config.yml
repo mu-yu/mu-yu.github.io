@@ -80,3 +80,5 @@ theme: next
 deploy:
   type: git
   repo: git@github.com:mu-yu/mu-yu.github.io.git
+  name: mu-yu
+  email: 490769750@qq.com
