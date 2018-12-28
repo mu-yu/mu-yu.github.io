@@ -17,8 +17,13 @@ after_script:
   # 替换同目录下的_config.yml文件中gh_token字符串为travis后台刚才配置的变量，注意此处sed命令用了双引号。单引号无效！
   - sed -i "s/github.com\/mu-yu/${GH_TOKEN}@github.com\/mu-yu/g" ./_config.yml
   - hexo generate -d
-  - hexo deploy
+  #- hexo deploy
   #- npm run deploy
+
+deploy:
+  skip_cleanup: true
+  provider: script
+  script: git clone --branch=master https://github.com/mu-yu/mu-yu.github.io.git .deploy_git && hexo deploy
 
 branches:
   only:
