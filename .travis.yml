@@ -7,23 +7,24 @@ before_install:
 install:
   - npm install
 
-script:
-  #- hexo clean
-  #- hexo generate -d
-
-after_script:
+before_script:
   - git config --global user.name "mu-yu"
   - git config --global user.email "490769750@qq.com"
   # 替换同目录下的_config.yml文件中gh_token字符串为travis后台刚才配置的变量，注意此处sed命令用了双引号。单引号无效！
   - sed -i "s/github.com\/mu-yu/${GH_TOKEN}@github.com\/mu-yu/g" ./_config.yml
-  - hexo generate -d
-  #- hexo deploy
-  #- npm run deploy
 
-deploy:
-  skip_cleanup: true
-  provider: script
-  script: git clone --branch=master https://github.com/mu-yu/mu-yu.github.io.git .deploy_git && hexo deploy
+script:
+  - hexo clean 
+  - hexo generate -d
+
+after_script:
+  - git clone --branch=master https://github.com/mu-yu/mu-yu.github.io.git .deploy_git
+  - cd .deploy_git
+  # Remove all files before they get copied from ../public/
+  # so git can track files that were removed in the last commit
+  - find . -path ./.git -prune -o -exec rm -rf {} \; 2> /dev/null
+  - cd ..
+  - hexo deploy
 
 branches:
   only:
