@@ -9,7 +9,7 @@ install:
 
 script:
   #- hexo clean
-  #- hexo generate
+  - hexo generate -d
 
 after_script:
   - git config --global user.name "mu-yu"
