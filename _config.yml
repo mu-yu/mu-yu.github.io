@@ -75,6 +75,21 @@ pagination_dir: page
 ## Themes: https://hexo.io/themes/
 theme: next
 
+theme_config:
+  # Valine.
+  # You can get your appid and appkey from https://leancloud.cn
+  # more info please open https://valine.js.org
+  valine:
+    enable: true
+    appid: BriYdVBEl6fbmjSxtWQp7eNp-gzGzoHsz # your leancloud application appid
+    appkey: NV1l5hR8kOcuPJXwoX4pO9xq # your leancloud application appkey
+    notify: false # mail notifier , https://github.com/xCss/Valine/wiki
+    verify: false # Verification code
+    placeholder: Write comment here. # comment box placeholder
+    avatar: mm # gravatar style
+    guest_info: nick,mail,link # custom comment header
+    pageSize: 10 # pagination size
+
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
