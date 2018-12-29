@@ -89,6 +89,7 @@ theme_config:
     avatar: mm # gravatar style
     guest_info: nick,mail,link # custom comment header
     pageSize: 10 # pagination size
+    visitor: true
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
