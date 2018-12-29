@@ -85,7 +85,7 @@ theme_config:
     appkey: NV1l5hR8kOcuPJXwoX4pO9xq # your leancloud application appkey
     notify: true # mail notifier , https://github.com/xCss/Valine/wiki
     verify: false # Verification code
-    placeholder: Write comment here. # comment box placeholder
+    placeholder: Write comment here.. # comment box placeholder
     avatar: mm # gravatar style
     guest_info: nick,mail,link # custom comment header
     pageSize: 10 # pagination size
